@@ -4,6 +4,9 @@ import Square from "./Square/Square";
 import { io } from "socket.io-client";
 import Swal from "sweetalert2";
 
+
+const socketUrl = process.env.REACT_APP_SOCKET_URL;  
+
 const renderFrom = [
   [1, 2, 3],
   [4, 5, 6],
@@ -128,7 +131,7 @@ const App = () => {
     const username = result.value;
     setPlayerName(username);
 
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io(socketUrl, {  // Use socket URL from env
       autoConnect: true,
     });
 
