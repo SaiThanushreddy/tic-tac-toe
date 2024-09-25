@@ -131,7 +131,7 @@ const App = () => {
     const username = result.value;
     setPlayerName(username);
 
-    const newSocket = io(REACT_APP_SOCKET_URL, {  // Use socket URL from env
+    const newSocket = io(process.env.REACT_APP_SOCKET_URL, {  // Use socket URL from env
       autoConnect: true,
     });
 
